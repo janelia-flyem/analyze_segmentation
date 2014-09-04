@@ -27,7 +27,10 @@ metrics<span id="metricsheader" style="cursor:pointer;">+</span>
 <br>
 
 instructions<span id="instructionsheader" style="cursor:pointer;">+</span>
-<div id="instructions" style="display:none">Here are some instructions</div>
+<div id="instructions" style="display:none">
+<a href="/static/graph.json">Sample graph file</a>
+<a href="/static/labels.h5.gz">Sample zipped h5 file</a>
+</div>
 
 <hr>
 
@@ -35,7 +38,7 @@ instructions<span id="instructionsheader" style="cursor:pointer;">+</span>
 <table border=1>
 Submit Segmentation Job<br>
 <form id="calclabels" method="post">
-<input type="file" name="h5file" id="h5file" accept=".h5"><br>
+<input type="file" name="h5file" id="h5file" accept=".gz"><br>
 <input type="file" name="graphfile" id="graphfile" accept=".json"><br>
 <input type="submit" id="submitbut" value="Submit"/><br>
 </form>
@@ -71,14 +74,35 @@ Submit Segmentation Job<br>
 
     $("#calclabels").submit(function(event) {                                                           
       event.preventDefault();
-      $('#status').html("");
-      $('#results').html("");
 
       var formData = new FormData();
+      
+      // load h5
       var x = document.getElementById("h5file");
+      if (x.files[0] === undefined) {
+            alert("Must provide h5 file");
+            return;
+      }    
+      if (x.files[0].size > 2000000) {
+            alert("H5 file is too big");
+            return;
+      }
       formData.append("h5file", x.files[0]);
+      
+      // load graph
       var y = document.getElementById("graphfile");
+      if (y.files[0] === undefined) {
+            alert("Must provide graph file");
+            return;
+      }    
+      if (y.files[0].size > 1000000) {
+            alert("Graph file is too big");
+            return;
+      }
       formData.append("graphfile", y.files[0]);
+      
+      $('#status').html("Processing...");
+      $('#results').html("");
 
        $.ajax({
         type: "POST",
@@ -103,13 +127,13 @@ Submit Segmentation Job<br>
                 url: status_location,
                 success: function(data){
                     status = data["status"];
-                    $('#status').html(status);
+                    $('#status').html("Status: <b>" + status + "</b>");
                                    
                     // grab html string
-                    results = data["results"]; 
+                    results = data["html-data"]; 
                     $('#results').html(results);
                 
-                    if (status == "finished") {
+                    if (status == "Finished") {
                         status_location = "";
                         document.getElementById("submitbut").disabled = false;
                     }
