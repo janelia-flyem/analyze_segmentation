@@ -30,6 +30,7 @@ instructions<span id="instructionsheader" style="cursor:pointer;">+</span>
 <div id="instructions" style="display:none">
 <a href="/static/graph.json">Sample graph file</a>
 <a href="/static/labels.h5.gz">Sample zipped h5 file</a>
+<a href="/static/grayscale.tgz">Directory of grayscale image stack</a>
 </div>
 
 <hr>
@@ -95,13 +96,13 @@ Submit Segmentation Job<br>
             alert("Must provide graph file");
             return;
       }    
-      if (y.files[0].size > 1000000) {
+      if (y.files[0].size > 4000000) {
             alert("Graph file is too big");
             return;
       }
       formData.append("graphfile", y.files[0]);
       
-      $('#status').html("Processing...");
+      $('#status').html("Uploading...");
       $('#results').html("");
 
        $.ajax({
@@ -112,7 +113,7 @@ Submit Segmentation Job<br>
         processData: false,
          success: function(data){
             status_location = data["status-callback"];
-            $('#status').html("Starting...");
+            $('#status').html("Processing...");
             document.getElementById("submitbut").disabled = true;
         },
         error: function(msg) {
@@ -130,7 +131,7 @@ Submit Segmentation Job<br>
                     $('#status').html("Status: <b>" + status + "</b>");
                                    
                     // grab html string
-                    results = data["html-data"]; 
+                    results = data["html-data"];
                     $('#results').html(results);
                 
                     if (status == "Finished") {

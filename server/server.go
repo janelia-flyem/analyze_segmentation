@@ -40,24 +40,12 @@ func NewServer(outputdir string, progdata string) (*Server) {
 }
 
 // TODO
-// format html output properly
-
-
-
-// convert result stuff to html-formatted
-// add schema for graph to provide immediate server error message
-// prevent panic when nil received -- empty response?
-// make sure h5 and graph are submitted for now; do quick size checks too
-// have go set finished
-// make links to download /static
-
-// add files to build
-// test on google vm
-// add vm script to build
-// strip graph file down
-
-// add basic metric info in html
-// add instructions including sample files and json schema, mention potential competition format and reference comppetition document
+// add all necessary data files to git and add links in form html
+// update git
+// add schema for graph and provide immediate message
+// avoid panic on nil (but error out); look for "Finished" and make "Error" if it is not; ignore html if error; check for "Error" status in teh form
+// add basic instruction, add link to arxiv paper and flyem-recon, make a list of all the different metrics and output
+// test on google vm: hand install go, install package, add link to flyem-recon webpage
 
 // (optional): show results against current (or best of the day)
 // (optional): pretty format of data (or just format each item) -- might need something if there are any charts like histogram
@@ -107,9 +95,81 @@ func randomHex() (randomStr string) {
 
 // extractHTML formats information in neuroproof output into html format
 func (s *Server) extractHTML(data map[string]interface{}) map[string]interface{} {
-	jsondata, _ := json.Marshal(data)
-        data["html-data"] = string(jsondata)
-        return data
+        ret_data := make(map[string]interface{})
+        html_str := ""
+        
+        // load status if status exists
+        if data2, ok := data["status"]; ok {
+                ret_data["status"] = data2
+                if data2.(string) == "Finished" {
+                    runtime := data["runtime"].(float64)
+                    html_str += "Seconds to complete: " + strconv.FormatFloat(runtime, 'f', 1, 64) + "<br><br>" 
+                }
+        }
+       
+        // print initial statistics from NeuroProof
+        if data2, ok := data["start"]; ok {
+            synapse_stats := data2.(map[string]interface{})["syn"]
+            vol_stats := data2.(map[string]interface{})["vol"]
+        
+            html_str += "<b>Volume Stats</b><ul>"
+            
+            volover := vol_stats.(map[string]interface{})["overseg-vi"].(float64)
+            volunder := vol_stats.(map[string]interface{})["underseg-vi"].(float64)
+
+            html_str += "<li>Over-seg VI: " + strconv.FormatFloat(volover, 'f', 4, 64) + "</li>"
+            html_str += "<li>Under-seg VI: " + strconv.FormatFloat(volunder, 'f', 4, 64) + "</li>"
+            html_str += "</ul><br>"
+           
+            synover := synapse_stats.(map[string]interface{})["overseg-vi"].(float64)
+            synunder := synapse_stats.(map[string]interface{})["underseg-vi"].(float64)
+            orphans := synapse_stats.(map[string]interface{})["orphans"].(float64)
+            
+            html_str += "<b>Synapse Stats</b><ul>"
+            html_str += "<li>Over-seg VI: " + strconv.FormatFloat(synover, 'f', 4, 64) + "</li>"
+            html_str += "<li>Under-seg VI: " + strconv.FormatFloat(synunder, 'f', 4, 64) + "</li>"
+            html_str += "<li>Orphan synapses: " + strconv.FormatFloat(orphans, 'f', 0, 64) + "</li>"
+            html_str += "</ul><br><br>"
+        }
+
+        // print proofreading statistics from NeuroProof
+        if data2, ok := data["proofreading-work"]; ok {
+            html_str += "<b>Automatic Focused Proofreading Performed</b><ul>"
+            vol_examined := data2.(map[string]interface{})["vol"].(map[string]interface{})["edges-examined"].(float64)
+            html_str += "<li>Number of focused volume decisions: " + strconv.FormatFloat(vol_examined, 'f', 0, 64) + "</li>" 
+            syn_examined := data2.(map[string]interface{})["syn"].(map[string]interface{})["edges-examined"].(float64)
+            html_str += "<li>Number of focused synapse decisions: " + strconv.FormatFloat(syn_examined, 'f', 0, 64) + "</li>"
+            html_str += "</ul><br><br>"
+        }
+
+        // print initial statistics from NeuroProof
+        if data2, ok := data["final"]; ok {
+            synapse_stats := data2.(map[string]interface{})["syn"]
+            vol_stats := data2.(map[string]interface{})["vol"]
+        
+            html_str += "<b>Volume Stats</b><ul>"
+            
+            volover := vol_stats.(map[string]interface{})["overseg-vi"].(float64)
+            volunder := vol_stats.(map[string]interface{})["underseg-vi"].(float64)
+
+            html_str += "<li>Over-seg VI: " + strconv.FormatFloat(volover, 'f', 4, 64) + "</li>"
+            html_str += "<li>Under-seg VI: " + strconv.FormatFloat(volunder, 'f', 4, 64) + "</li>"
+            html_str += "</ul><br>"
+           
+            synover := synapse_stats.(map[string]interface{})["overseg-vi"].(float64)
+            synunder := synapse_stats.(map[string]interface{})["underseg-vi"].(float64)
+            
+            html_str += "<b>Synapse Stats</b><ul>"
+            html_str += "<li>Over-seg VI: " + strconv.FormatFloat(synover, 'f', 4, 64) + "</li>"
+            html_str += "<li>Under-seg VI: " + strconv.FormatFloat(synunder, 'f', 4, 64) + "</li>"
+            html_str += "</ul><br><br>"
+        }
+
+
+
+
+        ret_data["html-data"] = html_str
+        return ret_data
 }
 
 // launch is a separate process that call neuroproof and updates log
@@ -311,15 +371,19 @@ func (s *Server) staticHandler(w http.ResponseWriter, r *http.Request) {
 
         if pathlist[0] == "graph.json" {
             w.Header().Set("Content-Type", "application/json")        
-            bytes, _ := ioutil.ReadFile(s.progData + "/overgraph.json")
+            bytes, _ := ioutil.ReadFile(s.progData + "/graph0.json")
             fmt.Fprintf(w, string(bytes)) 
         }
         if pathlist[0] == "labels.h5.gz" {
             w.Header().Set("Content-Type", "application/octet-stream")        
-            bytes, _ := ioutil.ReadFile(s.progData + "/labels.h5.gz")
+            bytes, _ := ioutil.ReadFile(s.progData + "/labels0.h5.gz")
             w.Write(bytes)
         }
-        
+        if pathlist[0] == "grayscale.tgz" {
+            w.Header().Set("Content-Type", "application/octet-stream")        
+            bytes, _ := ioutil.ReadFile(s.progData + "/grayscale_maps.tgz")
+            w.Write(bytes)
+        }       
 }
 
 

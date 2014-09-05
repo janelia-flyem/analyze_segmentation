@@ -1,0 +1,15 @@
+{
+    "recipe" : [
+        {
+            "type" : "body",
+            "path-length" : 0,
+            "threshold" : 3500,
+            "upper-prob" : 0.90
+        },
+        {
+            "type" : "synapse",
+            "threshold" : 0.1,
+            "upper-prob" : 0.99
+        }
+    ]
+}

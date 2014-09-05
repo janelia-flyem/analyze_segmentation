@@ -1,0 +1,1046 @@
+{
+    "data": [
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    232, 
+                    91, 
+                    10
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        236, 
+                        91, 
+                        2
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        223, 
+                        94, 
+                        2
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        243, 
+                        73, 
+                        9
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        231, 
+                        72, 
+                        9
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        218, 
+                        80, 
+                        9
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        241, 
+                        108, 
+                        9
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        220, 
+                        69, 
+                        15
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    86, 
+                    154, 
+                    32
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        95, 
+                        169, 
+                        32
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        103, 
+                        155, 
+                        33
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        101, 
+                        141, 
+                        32
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        95, 
+                        136, 
+                        37
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        96, 
+                        159, 
+                        43
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    140, 
+                    97, 
+                    33
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        160, 
+                        99, 
+                        33
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        159, 
+                        119, 
+                        33
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        145, 
+                        126, 
+                        33
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        168, 
+                        109, 
+                        24
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        148, 
+                        84, 
+                        32
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        154, 
+                        113, 
+                        39
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    133, 
+                    165, 
+                    41
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        138, 
+                        146, 
+                        41
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        125, 
+                        143, 
+                        42
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        152, 
+                        160, 
+                        38
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        148, 
+                        156, 
+                        44
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        112, 
+                        161, 
+                        42
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    154, 
+                    47, 
+                    54
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        153, 
+                        73, 
+                        54
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        137, 
+                        53, 
+                        54
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        133, 
+                        34, 
+                        54
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        147, 
+                        60, 
+                        58
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        148, 
+                        42, 
+                        63
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    189, 
+                    247, 
+                    54
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        187, 
+                        233, 
+                        54
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        179, 
+                        237, 
+                        50
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        184, 
+                        233, 
+                        44
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    73, 
+                    13, 
+                    56
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        84, 
+                        28, 
+                        55
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        71, 
+                        31, 
+                        55
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        65, 
+                        19, 
+                        42
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        68, 
+                        27, 
+                        63
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    95, 
+                    187, 
+                    58
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        111, 
+                        186, 
+                        58
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        108, 
+                        172, 
+                        58
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        90, 
+                        168, 
+                        58
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        99, 
+                        169, 
+                        55
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        107, 
+                        195, 
+                        49
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    210, 
+                    11, 
+                    59
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        218, 
+                        26, 
+                        59
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        205, 
+                        26, 
+                        59
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        218, 
+                        17, 
+                        53
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        228, 
+                        18, 
+                        57
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    27, 
+                    219, 
+                    68
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        30, 
+                        200, 
+                        68
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        13, 
+                        209, 
+                        68
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        27, 
+                        214, 
+                        79
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    207, 
+                    102, 
+                    79
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        200, 
+                        118, 
+                        79
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        217, 
+                        129, 
+                        82
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        187, 
+                        108, 
+                        79
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    144, 
+                    82, 
+                    103
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        133, 
+                        102, 
+                        102
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        117, 
+                        95, 
+                        102
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        153, 
+                        92, 
+                        100
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        130, 
+                        82, 
+                        95
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    156, 
+                    145, 
+                    125
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        155, 
+                        160, 
+                        120
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        155, 
+                        163, 
+                        126
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        165, 
+                        161, 
+                        125
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        173, 
+                        164, 
+                        135
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    107, 
+                    61, 
+                    132
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        104, 
+                        45, 
+                        132
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        94, 
+                        57, 
+                        132
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        93, 
+                        55, 
+                        115
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        91, 
+                        68, 
+                        142
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    101, 
+                    159, 
+                    144
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        105, 
+                        178, 
+                        144
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        92, 
+                        170, 
+                        136
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        117, 
+                        163, 
+                        136
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        113, 
+                        172, 
+                        146
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        95, 
+                        157, 
+                        129
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        109, 
+                        168, 
+                        134
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    34, 
+                    89, 
+                    147
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        54, 
+                        80, 
+                        147
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        41, 
+                        66, 
+                        147
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        24, 
+                        71, 
+                        147
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        21, 
+                        80, 
+                        142
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        31, 
+                        77, 
+                        137
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    221, 
+                    189, 
+                    147
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        225, 
+                        177, 
+                        154
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        235, 
+                        194, 
+                        149
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        210, 
+                        182, 
+                        149
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        215, 
+                        201, 
+                        148
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        229, 
+                        209, 
+                        148
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    216, 
+                    40, 
+                    166
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        223, 
+                        26, 
+                        166
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        211, 
+                        28, 
+                        166
+                    ]
+                }
+            ]
+        }, 
+        {
+            "T-bar": {
+                "status": "working", 
+                "confidence": 1.0, 
+                "body ID": -1, 
+                "location": [
+                    66, 
+                    187, 
+                    225
+                ]
+            }, 
+            "partners": [
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        70, 
+                        207, 
+                        223
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        56, 
+                        205, 
+                        223
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        49, 
+                        196, 
+                        225
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        81, 
+                        197, 
+                        231
+                    ]
+                }, 
+                {
+                    "confidence": 1.0, 
+                    "body ID": -1, 
+                    "location": [
+                        82, 
+                        198, 
+                        223
+                    ]
+                }
+            ]
+        }
+    ], 
+    "metadata": {
+        "username": "takemuras", 
+        "software version": "1.4.3", 
+        "description": "synapse annotations", 
+        "file version": 1, 
+        "software revision": "3607", 
+        "computer": "takemuras-ws2.janelia.priv", 
+        "date": "07-May-2012 16:53", 
+        "session path": "/groups/flyem/data/medulla-FIB-Z1211-25/session/takemuras.20120503.rez-250-1", 
+        "software": "Raveler"
+    }
+}
