@@ -10,6 +10,7 @@ import (
         "io/ioutil"
 	"os/signal"
 	"os/exec"
+	"github.com/janelia-flyem/gojsonschema"
 	"math/rand"
 	"strconv"
 	"strings"
@@ -40,11 +41,7 @@ func NewServer(outputdir string, progdata string) (*Server) {
 }
 
 // TODO
-// add all necessary data files to git and add links in form html
-// update git
-// add schema for graph and provide immediate message
-// avoid panic on nil (but error out); look for "Finished" and make "Error" if it is not; ignore html if error; check for "Error" status in teh form
-// add basic instruction, add link to arxiv paper and flyem-recon, make a list of all the different metrics and output
+
 // test on google vm: hand install go, install package, add link to flyem-recon webpage
 
 // (optional): show results against current (or best of the day)
@@ -104,6 +101,10 @@ func (s *Server) extractHTML(data map[string]interface{}) map[string]interface{}
                 if data2.(string) == "Finished" {
                     runtime := data["runtime"].(float64)
                     html_str += "Seconds to complete: " + strconv.FormatFloat(runtime, 'f', 1, 64) + "<br><br>" 
+                } else if data2.(string) == "Error" {
+                    html_str += "Unknown error computing similarity"
+                    ret_data["html-data"] = html_str
+                    return ret_data
                 }
         }
        
@@ -165,17 +166,16 @@ func (s *Server) extractHTML(data map[string]interface{}) map[string]interface{}
             html_str += "</ul><br><br>"
         }
 
-
-
-
         ret_data["html-data"] = html_str
         return ret_data
 }
 
 // launch is a separate process that call neuroproof and updates log
 func (s *Server) launchJob(session_id string, session_dir string, remoteaddr string) {
+        // delete entire directory (output is saved to log)
+        defer os.RemoveAll(session_dir) 
+        
         // build np string
-        // ?! add synapse file
         argument_arr := make([]string, 0)
         argument_arr = append(argument_arr, session_dir + "/" + h5name) 
         argument_arr = append(argument_arr, s.progData + "/groundtruth.h5") 
@@ -221,8 +221,18 @@ func (s *Server) launchJob(session_id string, session_dir string, remoteaddr str
         fout.Close()
         s.lock.Unlock()        
 
-        // delete entire directory (output is saved to log)
-        //os.RemoveAll(session_dir) 
+        data, found := s.transactions.getTran(session_id)
+        if !found {
+            datatemp := make(map[string]interface{})
+            datatemp["status"] = "Error"
+            s.transactions.updateTran(session_id, datatemp)
+        } else {
+            if val, found2 := data["status"]; !found2 || val.(string) != "Finished" {
+                    data["status"] = "Error"
+                    s.transactions.updateTran(session_id, data)
+            }
+        }
+
 }
 
 
@@ -286,6 +296,7 @@ func (s *Server) formHandler(w http.ResponseWriter, r *http.Request) {
         bytes, err := ioutil.ReadAll(zreader)
         if err != nil {
                 badRequest(w, "Could not read gzip h5 file")
+                os.RemoveAll(session_dir) 
                 return
         }
 
@@ -294,17 +305,37 @@ func (s *Server) formHandler(w http.ResponseWriter, r *http.Request) {
 	graphdata, _, err := r.FormFile("graphfile")
         if err != nil {
                 badRequest(w, "json file not provided")
+                os.RemoveAll(session_dir) 
+                return
         }
         bytes2, err := ioutil.ReadAll(graphdata)
         if err != nil {
                 badRequest(w, "Could not be read graph json")
+                os.RemoveAll(session_dir) 
                 return
         }
+     
+        // convert schema to json data
+	var schema_data interface{}
+	json.Unmarshal([]byte(graphSchema), &schema_data)
+
+        // convert json bytes to json object	
+	var graph_json interface{}
+        json.Unmarshal(bytes2, &graph_json)
+	
+        // validate json schema
+	schema, err := gojsonschema.NewJsonSchemaDocument(schema_data)
+	validationResult := schema.Validate(graph_json)
+	if !validationResult.Valid() {
+		badRequest(w, "JSON did not pass validation")
+                os.RemoveAll(session_dir) 
+		return
+	}
         ioutil.WriteFile(session_dir + "/" + graphname, bytes2, 0644) 
 
         // write initial status
         status := make(map[string]interface{})
-        status["status"] = "started" 
+        status["status"] = "Started" 
         s.transactions.updateTran(session_id, status)
 
         // launch job
@@ -373,6 +404,10 @@ func (s *Server) staticHandler(w http.ResponseWriter, r *http.Request) {
             w.Header().Set("Content-Type", "application/json")        
             bytes, _ := ioutil.ReadFile(s.progData + "/graph0.json")
             fmt.Fprintf(w, string(bytes)) 
+        }
+        if pathlist[0] == "graph.schema.json" {
+            w.Header().Set("Content-Type", "application/json")        
+            fmt.Fprintf(w, graphSchema) 
         }
         if pathlist[0] == "labels.h5.gz" {
             w.Header().Set("Content-Type", "application/octet-stream")        
