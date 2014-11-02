@@ -427,7 +427,7 @@ func (s *Server) Serve() {
 	//hname, _ := os.Hostname()
 	//webAddress := "http://23.251.159.133:80" //+ ":" + strconv.Itoa(80)
 	hname, _ := os.Hostname()
-	webAddress := hname + ":" + strconv.Itoa(8000)
+	webAddress := hname + ":" + strconv.Itoa(80)
 
         s.httpAddress = webAddress
 	fmt.Printf("Web server address: %s\n", webAddress)

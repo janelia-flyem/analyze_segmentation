@@ -1,7 +1,7 @@
 package main
 
 import (
-	"analyze_segmentation/server"
+	"github.com/janelia-flyem/analyze_segmentation/server"
 	"fmt"
         "flag"
         "os"
